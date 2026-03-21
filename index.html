@@ -290,25 +290,7 @@
   }
   .cv-banner:hover { background: var(--navy-hover); color: #fff; text-decoration: none; }
 
-  /* ── CV & CONTACT SECTION ── */
-  .cv-contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-  }
 
-  .cv-section { display: flex; flex-direction: column; }
-
-  /* ── CONTACT ── */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-    font-size: 0.88rem;
-  }
-  .contact-item { display: flex; flex-direction: column; gap: 0.2rem; }
-  .contact-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
-  .contact-val { color: var(--text); }
 
   /* ── FOOTER ── */
   footer {
@@ -324,8 +306,6 @@
   @media (max-width: 680px) {
     .intro { grid-template-columns: 1fr; }
     .intro-photo { width: 140px; height: 170px; }
-    .cv-contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
-    .contact-grid { grid-template-columns: 1fr; }
     nav { padding: 0 1rem; overflow-x: auto; }
     .page-wrap { padding: 2rem 1.2rem 5rem; }
     .teach-row { grid-template-columns: 1fr; gap: 0.1rem; }
@@ -338,10 +318,10 @@
 <nav>
   <a class="nav-name" href="#top">Laxman Subedi</a>
   <ul class="nav-links">
-    <li><a href="#research">Research</a></li>
+    <li><a href="#working-papers">Working Papers</a></li>
+    <li><a href="#works-in-progress">Works in Progress</a></li>
     <li><a href="#teaching">Teaching</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="cv.pdf">CV</a></li>
+    <li><a href="#cv">CV</a></li>
   </ul>
 </nav>
 
@@ -387,7 +367,7 @@
   </div>
 
   <!-- WORKING PAPERS -->
-  <div class="section" id="research">
+  <div class="section" id="working-papers">
     <div class="section-title">Working Papers</div>
     <div class="paper-list">
 
@@ -446,7 +426,7 @@
   </div>
 
   <!-- WORKS IN PROGRESS -->
-  <div class="section">
+  <div class="section" id="works-in-progress">
     <div class="section-title">Works in Progress</div>
     <div class="paper-list">
 
@@ -473,70 +453,24 @@
   <!-- TEACHING -->
   <div class="section" id="teaching">
     <div class="section-title">Teaching</div>
-    <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">Teaching Assistant, Department of Economics, University of Oklahoma. Office hours: Tuesdays &amp; Thursdays, 2:00–4:00 PM, CCD2 Room 433.</p>
-    <!-- <div class="teach-list">
-      <div class="teach-row">
-        <div class="teach-course">Principles of Microeconomics (ECON 1113)</div>
-        <div class="teach-role">TA · Fall 2023, Spring 2024</div>
-      </div>
-      <div class="teach-row">
-        <div class="teach-course">Environmental Economics (ECON 3313)</div>
-        <div class="teach-role">TA · Spring 2024</div>
-      </div>
-      <div class="teach-row">
-        <div class="teach-course">Econometrics I (ECON 5113)</div>
-        <div class="teach-role">TA · Fall 2024</div>
-      </div>
-      <div class="teach-row">
-        <div class="teach-course">Development Economics (ECON 4323)</div>
-        <div class="teach-role">TA · Spring 2025</div>
-      </div> -->
-    </div>
+    <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">GraduateTeaching Assistant, Department of Economics, University of Oklahoma. Office hours: Tuesdays &amp; Thursdays, 2:00–4:00 PM, CCD1 Room 222.</p>
   </div>
 
-  <!-- CV & CONTACT -->
-  <div class="cv-contact-wrapper">
-    <div class="section cv-section">
-      <div class="section-title">Curriculum Vitae</div>
-      <p style="font-size:0.88rem;color:#333;margin-bottom:1rem;">A full CV with education, fellowships, and conference presentations is available below.</p>
-      <a href="cv.pdf" class="cv-banner">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download CV (PDF)
-      </a>
-    </div>
-
-    <div class="section" id="contact">
-      <div class="section-title">Contact</div>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <span class="contact-label">Email</span>
-          <span class="contact-val"><a href="mailto:lsubedi@ou.edu">lsubedi@ou.edu</a></span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">Office</span>
-          <span class="contact-val">CCD1, Room 222</span>
-        </div>
-        <!-- <div class="contact-item">
-          <span class="contact-label">Mailing Address</span>
-          <span class="contact-val">Department of Economics<br>307 W Brooks St<br>Norman, OK 73019</span>
-        </div> -->
-        <div class="contact-item">
-          <span class="contact-label">Links</span>
-          <span class="contact-val">
-            <a href="#">Google Scholar</a><br>
-            <a href="#">SSRN</a><br>
-            <a href="#">Twitter / X</a>
-          </span>
-        </div>
-      </div>
-    </div>
+  <!-- CV -->
+  <div class="section" id="cv">
+    <div class="section-title">Curriculum Vitae</div>
+    <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">A full CV with education, fellowships, and conference presentations is available below.</p>
+    <a href="cv.pdf" class="cv-banner">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download CV (PDF)
+    </a>
   </div>
 
 </div><!-- end page-wrap -->
 
 <footer>
   <span>Laxman Subedi · University of Oklahoma · Department of Economics</span>
-  <span>Last updated March 2025</span>
+  <span>Last updated March 2026</span>
 </footer>
 
 <script>
