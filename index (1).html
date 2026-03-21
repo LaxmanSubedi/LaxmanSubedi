@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laxman Subedi — Economist</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0e1f45;
+    --navy-hover: #1a3370;
+    --link: #1a4ab5;
+    --link-hover: #0e2d7a;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #d8dde8;
+    --bg: #ffffff;
+    --sidebar-bg: #f5f7fb;
+    --accent: #1a4ab5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-hover); text-decoration: underline; }
+
+  /* ── NAV ── */
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--navy);
+    padding: 1rem 1.5rem 1rem 0;
+    border-right: 1px solid var(--border);
+    margin-right: 0.5rem;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .nav-name:hover { color: var(--navy-hover); text-decoration: none; }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0;
+  }
+  .nav-links a {
+    display: block;
+    padding: 1rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .nav-links a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* ── LAYOUT ── */
+  .page-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  /* ── HERO / INTRO ── */
+  .intro {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+  }
+
+  .intro-photo {
+    width: 200px;
+    height: 240px;
+    background: var(--sidebar-bg);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    flex-shrink: 0;
+  }
+  .intro-photo svg { color: #b0bbd4; }
+  .photo-hint { font-size: 0.65rem; color: #b0bbd4; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .intro-right {}
+
+  .intro-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+  }
+
+  .intro-position {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 0.15rem;
+  }
+
+  .intro-affil {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+
+  .intro-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+  .intro-meta-row {
+    font-size: 0.85rem;
+    color: var(--text);
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+  .intro-meta-row .label { color: var(--muted); min-width: 4.5rem; }
+
+  .intro-bio {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #333;
+    border-top: 1px solid var(--border);
+    padding-top: 1.2rem;
+  }
+
+  .fields-line {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+  }
+  .fields-line strong { color: var(--text); font-weight: 500; }
+
+  /* ── SECTIONS ── */
+  .section { margin-bottom: 3rem; }
+
+  .section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--navy);
+    border-bottom: 1.5px solid var(--navy);
+    padding-bottom: 0.35rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── PAPERS ── */
+  .paper-list { display: flex; flex-direction: column; gap: 1.6rem; }
+
+  .paper {
+    padding-left: 1rem;
+    border-left: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .paper:hover { border-left-color: var(--accent); }
+
+  .paper-title {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+  }
+  .paper-title a { color: var(--link); font-weight: 500; }
+  .paper-title a:hover { color: var(--link-hover); }
+
+  .paper-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.45rem;
+    border-radius: 2px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+  .badge-jmp { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+  .badge-wp  { background: #d1e7dd; color: #0a5f38; border: 1px solid #a3cfbb; }
+  .badge-ip  { background: #fff0e0; color: #8a4400; border: 1px solid #ffb870; }
+  .badge-pub { background: #e0e8ff; color: #1a3c8a; border: 1px solid #a0b8f0; }
+
+  .paper-coauthor { font-size: 0.83rem; color: var(--muted); margin-bottom: 0.2rem; }
+  .paper-venue { font-size: 0.83rem; color: var(--muted); font-style: italic; margin-bottom: 0.3rem; }
+  .paper-links { display: flex; gap: 0.8rem; font-size: 0.78rem; margin-top: 0.3rem; flex-wrap: wrap; }
+  .paper-links a {
+    color: var(--link);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 0.1rem 0.55rem;
+    border-radius: 2px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .paper-links a:hover { background: var(--sidebar-bg); border-color: var(--link); text-decoration: none; }
+
+  .abstract-toggle {
+    font-size: 0.78rem;
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: inherit;
+    margin-top: 0.3rem;
+    display: inline-block;
+    text-decoration: underline dotted;
+  }
+  .abstract-toggle:hover { color: var(--link); }
+
+  .abstract-body {
+    display: none;
+    font-size: 0.83rem;
+    color: #444;
+    line-height: 1.75;
+    margin-top: 0.6rem;
+    padding: 0.8rem 1rem;
+    background: var(--sidebar-bg);
+    border-left: 2px solid var(--border);
+  }
+  .abstract-body.open { display: block; }
+
+  /* ── TEACHING ── */
+  .teach-list { display: flex; flex-direction: column; gap: 0; }
+  .teach-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+    font-size: 0.88rem;
+  }
+  .teach-course { color: var(--text); }
+  .teach-role { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
+
+  /* ── CV BLOCK ── */
+  .cv-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--navy);
+    color: #fff;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+  .cv-banner:hover { background: var(--navy-hover); color: #fff; text-decoration: none; }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    font-size: 0.88rem;
+  }
+  .contact-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .contact-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .contact-val { color: var(--text); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.2rem 2.5rem;
+    font-size: 0.72rem;
+    color: #aaa;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    .intro { grid-template-columns: 1fr; }
+    .intro-photo { width: 140px; height: 170px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 1rem; overflow-x: auto; }
+    .page-wrap { padding: 2rem 1.2rem 5rem; }
+    .teach-row { grid-template-columns: 1fr; gap: 0.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-name" href="#top">Laxman Subedi</a>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="cv.pdf">CV</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap" id="top">
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-photo">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <span class="photo-hint">Your photo</span>
+    </div>
+
+    <div class="intro-right">
+      <h1 class="intro-name">Laxman Subedi</h1>
+      <div class="intro-position">PhD Student in Economics (Second Year)</div>
+      <div class="intro-affil">University of Oklahoma</div>
+
+      <div class="intro-meta">
+        <div class="intro-meta-row">
+          <span class="label">Email</span>
+          <a href="mailto:lsubedi@ou.edu">lsubedi@ou.edu</a>
+        </div>
+        <div class="intro-meta-row">
+          <span class="label">CV</span>
+          <a href="cv.pdf">Download PDF</a>
+        </div>
+        <div class="intro-meta-row">
+          <span class="label">Office</span>
+          <span>CCD2, Room 433 · Norman, OK 73019</span>
+        </div>
+      </div>
+
+      <div class="intro-bio">
+        <p>Welcome! I am a second-year PhD student in the Department of Economics at the University of Oklahoma, where I am advised by Professor Margaret Calloway. My primary research interests are <strong>development economics</strong> and the <strong>economics of environment and climate</strong>. I study how climate variability and environmental stress shape household welfare, debt, migration, and institutional adaptation in South and Southeast Asia.</p>
+        <p style="margin-top:0.8rem;">Before joining OU, I was a research associate at the International Centre for Integrated Mountain Development (ICIMOD) in Kathmandu, Nepal, contributing to projects on glacier retreat and downstream agricultural vulnerability.</p>
+      </div>
+
+      <div class="fields-line">
+        <strong>Primary fields:</strong> Development Economics · Environmental &amp; Climate Economics &nbsp;|&nbsp;
+        <strong>Secondary:</strong> Applied Microeconometrics · Political Economy of Development
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKING PAPERS -->
+  <div class="section" id="research">
+    <div class="section-title">Working Papers</div>
+    <div class="paper-list">
+
+      <div class="paper">
+        <div class="paper-title">
+          Monsoon Shocks and Household Debt: Evidence from Rural Nepal
+          <span class="paper-badge badge-jmp">JMP</span>
+          <span class="paper-badge badge-wp">Working Paper</span>
+        </div>
+        <div class="paper-coauthor">Laxman Subedi</div>
+        <div class="paper-venue">Under Review, <em>Journal of Development Economics</em></div>
+        <div class="paper-links">
+          <a href="#">Paper</a>
+          <a href="#">Slides</a>
+        </div>
+        <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▸</button>
+        <div class="abstract-body">
+          This paper studies how monsoon rainfall shocks affect household debt in rural Nepal. Using a panel of 1,200 farm households matched to high-resolution gridded precipitation data from 2010–2020, I exploit year-to-year rainfall variation within districts to identify the causal effect of negative monsoon shocks on informal and formal borrowing. I find that a one-standard-deviation below-average monsoon season increases the probability of taking an informal loan by 14 percentage points and raises outstanding debt by 22% within the same agricultural year. Effects are concentrated among households with little savings and no access to formal credit. The results suggest that incomplete credit markets amplify climate risk exposure at the household level.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          Temperature, Agricultural Wages, and Migration Decisions in the Indo-Gangetic Plain
+          <span class="paper-badge badge-wp">Working Paper</span>
+        </div>
+        <div class="paper-coauthor">with Priya Menon (University of Oklahoma)</div>
+        <div class="paper-links">
+          <a href="#">Draft available upon request</a>
+        </div>
+        <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▸</button>
+        <div class="abstract-body">
+          We examine how rising temperatures affect agricultural day wages and seasonal migration decisions across the Indo-Gangetic Plain. Combining MODIS land surface temperature data with district-level wage records and the NSSO migration module, we find that a 1°C increase in the summer growing-season temperature reduces agricultural wages by 3.2% and raises the probability of short-term out-migration by 2.5 percentage points. Heterogeneity analysis reveals that effects are strongest in districts with lower groundwater availability, pointing to an interaction between heat stress and irrigation capacity.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          Did Community Forestry Reduce Deforestation? A Regression Discontinuity Approach in Nepal's Terai Region
+          <span class="paper-badge badge-wp">Working Paper</span>
+        </div>
+        <div class="paper-coauthor">Laxman Subedi</div>
+        <div class="paper-venue">Presented at AERE Summer Conference 2024</div>
+        <div class="paper-links">
+          <a href="#">Paper</a>
+          <a href="#">Slides</a>
+          <a href="#">AERE Presentation</a>
+        </div>
+        <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▸</button>
+        <div class="abstract-body">
+          I evaluate the deforestation impact of Nepal's 1993 community forestry devolution, which transferred management rights over forest parcels to locally organized user groups. Exploiting sharp GPS-defined administrative boundaries that determined program eligibility, I implement a spatial regression discontinuity design using 30 years of Landsat-derived forest cover data. I find that community forestry reduced annual deforestation rates by 1.8 percentage points relative to comparable government-managed parcels, an effect that strengthens over time as local institutions consolidate. The results are robust to a range of bandwidth selections and placebo boundary tests.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WORKS IN PROGRESS -->
+  <div class="section">
+    <div class="section-title">Works in Progress</div>
+    <div class="paper-list">
+
+      <div class="paper">
+        <div class="paper-title">
+          Credit Constraints and Adaptation to Flood Risk: Micro-Level Evidence from Bangladesh
+          <span class="paper-badge badge-ip">In Progress</span>
+        </div>
+        <div class="paper-coauthor">with Raj Sharma (World Bank) and Emily Torres (University of Oklahoma)</div>
+        <div class="paper-venue">Data collection ongoing — Bangladesh HIES 2024</div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          Political Connections and Green Subsidy Allocation: Firm-Level Evidence from India
+          <span class="paper-badge badge-ip">In Progress</span>
+        </div>
+        <div class="paper-coauthor">Laxman Subedi</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TEACHING -->
+  <div class="section" id="teaching">
+    <div class="section-title">Teaching</div>
+    <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">Teaching Assistant, Department of Economics, University of Oklahoma. Office hours: Tuesdays &amp; Thursdays, 2:00–4:00 PM, CCD2 Room 433.</p>
+    <div class="teach-list">
+      <div class="teach-row">
+        <div class="teach-course">Principles of Microeconomics (ECON 1113)</div>
+        <div class="teach-role">TA · Fall 2023, Spring 2024</div>
+      </div>
+      <div class="teach-row">
+        <div class="teach-course">Environmental Economics (ECON 3313)</div>
+        <div class="teach-role">TA · Spring 2024</div>
+      </div>
+      <div class="teach-row">
+        <div class="teach-course">Econometrics I (ECON 5113)</div>
+        <div class="teach-role">TA · Fall 2024</div>
+      </div>
+      <div class="teach-row">
+        <div class="teach-course">Development Economics (ECON 4323)</div>
+        <div class="teach-role">TA · Spring 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CV -->
+  <div class="section">
+    <div class="section-title">Curriculum Vitae</div>
+    <p style="font-size:0.88rem;color:#333;margin-bottom:0.8rem;">A full CV with education, fellowships, and conference presentations is available below.</p>
+    <a href="cv.pdf" class="cv-banner">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download CV (PDF)
+    </a>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <div class="section-title">Contact</div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="contact-label">Email</span>
+        <span class="contact-val"><a href="mailto:lsubedi@ou.edu">lsubedi@ou.edu</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Office</span>
+        <span class="contact-val">CCD2, Room 433</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Mailing Address</span>
+        <span class="contact-val">Department of Economics<br>307 W Brooks St<br>Norman, OK 73019</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Links</span>
+        <span class="contact-val">
+          <a href="#">Google Scholar</a><br>
+          <a href="#">SSRN</a><br>
+          <a href="#">Twitter / X</a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end page-wrap -->
+
+<footer>
+  <span>Laxman Subedi · University of Oklahoma · Department of Economics</span>
+  <span>Last updated March 2025</span>
+</footer>
+
+<script>
+  function toggleAbstract(btn) {
+    const ab = btn.nextElementSibling;
+    const open = ab.classList.toggle('open');
+    btn.textContent = open ? 'Abstract ▾' : 'Abstract ▸';
+  }
+</script>
+</body>
+</html>
