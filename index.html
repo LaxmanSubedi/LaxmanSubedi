@@ -290,11 +290,20 @@
   }
   .cv-banner:hover { background: var(--navy-hover); color: #fff; text-decoration: none; }
 
+  /* ── CV & CONTACT SECTION ── */
+  .cv-contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .cv-section { display: flex; flex-direction: column; }
+
   /* ── CONTACT ── */
   .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
     font-size: 0.88rem;
   }
   .contact-item { display: flex; flex-direction: column; gap: 0.2rem; }
@@ -315,6 +324,7 @@
   @media (max-width: 680px) {
     .intro { grid-template-columns: 1fr; }
     .intro-photo { width: 140px; height: 170px; }
+    .cv-contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
     .contact-grid { grid-template-columns: 1fr; }
     nav { padding: 0 1rem; overflow-x: auto; }
     .page-wrap { padding: 2rem 1.2rem 5rem; }
@@ -484,39 +494,40 @@
     </div>
   </div>
 
-  <!-- CV -->
-  <div class="section">
-    <div class="section-title">Curriculum Vitae</div>
-    <p style="font-size:0.88rem;color:#333;margin-bottom:0.8rem;">A full CV with education, fellowships, and conference presentations is available below.</p>
-    <a href="cv.pdf" class="cv-banner">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download CV (PDF)
-    </a>
-  </div>
+  <!-- CV & CONTACT -->
+  <div class="cv-contact-wrapper">
+    <div class="section cv-section">
+      <div class="section-title">Curriculum Vitae</div>
+      <p style="font-size:0.88rem;color:#333;margin-bottom:1rem;">A full CV with education, fellowships, and conference presentations is available below.</p>
+      <a href="cv.pdf" class="cv-banner">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV (PDF)
+      </a>
+    </div>
 
-  <!-- CONTACT -->
-  <div class="section" id="contact">
-    <div class="section-title">Contact</div>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <span class="contact-label">Email</span>
-        <span class="contact-val"><a href="mailto:lsubedi@ou.edu">lsubedi@ou.edu</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Office</span>
-        <span class="contact-val">CCD1, Room 222</span>
-      </div>
-      <!-- <div class="contact-item">
-        <span class="contact-label">Mailing Address</span>
-        <span class="contact-val">Department of Economics<br>307 W Brooks St<br>Norman, OK 73019</span>
-      </div> -->
-      <div class="contact-item">
-        <span class="contact-label">Links</span>
-        <span class="contact-val">
-          <a href="#">Google Scholar</a><br>
-          <a href="#">SSRN</a><br>
-          <a href="#">Twitter / X</a>
-        </span>
+    <div class="section" id="contact">
+      <div class="section-title">Contact</div>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-val"><a href="mailto:lsubedi@ou.edu">lsubedi@ou.edu</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Office</span>
+          <span class="contact-val">CCD1, Room 222</span>
+        </div>
+        <!-- <div class="contact-item">
+          <span class="contact-label">Mailing Address</span>
+          <span class="contact-val">Department of Economics<br>307 W Brooks St<br>Norman, OK 73019</span>
+        </div> -->
+        <div class="contact-item">
+          <span class="contact-label">Links</span>
+          <span class="contact-val">
+            <a href="#">Google Scholar</a><br>
+            <a href="#">SSRN</a><br>
+            <a href="#">Twitter / X</a>
+          </span>
+        </div>
       </div>
     </div>
   </div>
