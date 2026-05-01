@@ -112,8 +112,11 @@
     gap: 0.7rem;
     flex-shrink: 0;
   }
-  .intro-photo svg { color: #b0bbd4; }
-  .photo-hint { font-size: 0.65rem; color: #b0bbd4; letter-spacing: 0.08em; text-transform: uppercase; }
+  .profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
   .intro-right {}
 
@@ -330,10 +333,8 @@
   <!-- INTRO -->
   <div class="intro">
     <div class="intro-photo">
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-      <span class="photo-hint"><img src="./your-photo.jpg" alt="My photo" style="max-width:100%; height:auto; border-radius:12px;" />
-      </span>
-    </div>
+  <img src="assets/img/photo_laxman.jpg" alt="Laxman Subedi" class="profile-img">
+</div>
 
     <div class="intro-right">
       <h1 class="intro-name">Laxman Subedi</h1>
@@ -343,7 +344,7 @@
       <div class="intro-meta">
         <div class="intro-meta-row">
           <span class="label">Email</span>
-          <a href="mailto:lsubedi@ou.edu">laxman.subedi-1@ou.edu</a>
+          <a href="mailto:laxman.subedi-1@ou.edu">laxman.subedi-1@ou.edu</a>
         </div>
         <div class="intro-meta-row">
           <span class="label">CV</span>
@@ -370,6 +371,7 @@
   <div class="section" id="working-papers">
     <div class="section-title">Working Papers</div>
     <div class="paper-list">
+      
 
       <!-- <div class="paper">
         <div class="paper-title">
@@ -427,8 +429,25 @@
 
   <!-- WORKS IN PROGRESS -->
   <div class="section" id="works-in-progress">
-    <div class="section-title">Works in Progress</div>
-    <div class="paper-list">
+  <div class="section-title">Works in Progress</div>
+  <div class="paper-list">
+
+    <div class="paper">
+      <div class="paper-title">
+        ENSO-Driven Winter Climate Variation and Earnings Outcomes in the United States
+        <span class="paper-badge badge-ip">Work in Progress</span>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">
+        Air Pollution and Educational Attainment: Evidence from Thermal Inversions in Nepal
+        <span class="paper-badge badge-ip">Work in Progress</span>
+      </div>
+    </div>
+
+  </div>
+</div>
 
       <!-- <div class="paper">
         <div class="paper-title">
@@ -460,10 +479,14 @@
   <div class="section" id="cv">
     <div class="section-title">Curriculum Vitae</div>
     <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">A full CV with education, fellowships, and conference presentations is available below.</p>
-    <a href="cv.pdf" class="cv-banner">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download CV (PDF)
-    </a>
+    <a href="assets/cv/Laxman_subedi_cv.pdf" class="cv-banner" target="_blank">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>
+  Download CV (PDF)
+</a>
   </div>
 
 </div><!-- end page-wrap -->
